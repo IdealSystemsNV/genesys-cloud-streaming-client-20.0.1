@@ -7,18 +7,15 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "dist/npm/index.js",
-  "module": "dist/es/index.js",
-  "rollup:bundle": "dist/es/index.bundle.js",
-  "web": "dist/streaming-client.browser.js",
+  "main": "src/index.ts",
   "files": [
-    "dist"
+    "src",
+    "types"
   ],
-  "pre-push": [
-    "test"
-  ],
-  "types": "dist/es/index.d.ts",
+  "pre-push": [],
+  "types": "types/index.d.ts",
   "scripts": {
+    "types": "tsc --emitDeclarationOnly --declaration --declarationDir ./types --rootDir ./src",
     "prebuild": "rimraf dist",
     "build": "ts-node scripts/build",
     "clean": "rimraf dist",
@@ -56,11 +53,11 @@
     "core-js": "^3.6.5",
     "debounce-promise": "^3.1.2",
     "exponential-backoff": "^3.1.1",
-    "genesys-cloud-client-logger": "^5.0.0",
+    "genesys-cloud-client-logger": "github:IdealSystemsNV/genesys-cloud-client-logger-5.0.0#MO",
     "limiter": "^1.1.0",
     "lodash.throttle": "^4.1.1",
     "lru-cache": "^11.0.1",
-    "stanza": "^12.20.0",
+    "stanza": "^12.22.0",
     "strict-event-emitter": "^0.5.0",
     "strict-event-emitter-types": "^2.0.0",
     "unorm": "^1.6.0",
